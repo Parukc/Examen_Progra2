@@ -5,6 +5,8 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Categorias from "./pages/Categorias";
 import NuevaCategoria from "./pages/NuevaCategoria";
+import Informacion from "./pages/Informacion";
+import Calculos from "./pages/Calculos";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/categorias" element={<Categorias />} />
         <Route path="/nueva-categoria" element={<NuevaCategoria />} />
+        <Route path="/informacion" element={<Informacion />} />
+        <Route path="/calculos" element={<Calculos />} />
       </Routes>
       <Footer />
     </Router>

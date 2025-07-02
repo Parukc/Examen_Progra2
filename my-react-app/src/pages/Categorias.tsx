@@ -1,27 +1,25 @@
-import { Container, Typography, Card, CardContent, List, ListItem, ListItemText } from "@mui/material";
+import { Container, Typography, Table, TableBody, TableCell, TableContainer, TableRow, Paper } from "@mui/material";
+import { useCategoria } from "../context/CategoriaContext";
 
 export default function Categorias() {
+  const { categorias } = useCategoria();
+
   return (
     <Container maxWidth="md" sx={{ mt: 4 }}>
       <Typography variant="h5" align="center" gutterBottom>
         Listado de Categorías
       </Typography>
-
-      <Card>
-        <CardContent sx={{ p: 0 }}>
-          <List disablePadding>
-            <ListItem divider>
-              <ListItemText primary="Geometría" />
-            </ListItem>
-            <ListItem divider>
-              <ListItemText primary="Álgebra" />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Estadística" />
-            </ListItem>
-          </List>
-        </CardContent>
-      </Card>
+      <TableContainer component={Paper} sx={{ mt: 2 }}>
+        <Table>
+          <TableBody>
+            {categorias.map((cat, index) => (
+              <TableRow key={index}>
+                <TableCell>{cat.nombre}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </Container>
   );
 }
