@@ -1,23 +1,27 @@
-import { Box, Typography, List, ListItem, ListItemText, Paper } from "@mui/material";
+import { Container, Typography, Card, CardContent, List, ListItem, ListItemText } from "@mui/material";
 
 export default function Categorias() {
-  const categorias = ["Geometría", "Álgebra", "Estadística"];
-
   return (
-    <Box sx={{ maxWidth: 600, mx: "auto", mt: 4 }}>
-      <Typography variant="h5" gutterBottom>
+    <Container maxWidth="md" sx={{ mt: 4 }}>
+      <Typography variant="h5" align="center" gutterBottom>
         Listado de Categorías
       </Typography>
 
-      <Paper variant="outlined">
-        <List>
-          {categorias.map((cat, index) => (
-            <ListItem key={index} divider>
-              <ListItemText primary={cat} />
+      <Card>
+        <CardContent sx={{ p: 0 }}>
+          <List disablePadding>
+            <ListItem divider>
+              <ListItemText primary="Geometría" />
             </ListItem>
-          ))}
-        </List>
-      </Paper>
-    </Box>
+            <ListItem divider>
+              <ListItemText primary="Álgebra" />
+            </ListItem>
+            <ListItem>
+              <ListItemText primary="Estadística" />
+            </ListItem>
+          </List>
+        </CardContent>
+      </Card>
+    </Container>
   );
 }
