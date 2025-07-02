@@ -1,9 +1,11 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 export default function Footer() {
   return (
-    <Box mt={5} py={2} textAlign="center" bgcolor="#28a745" color="white">
-      © 2025 - Sistema de Categorías - Taller Académico
+    <Box sx={{ backgroundColor: "#2eaf47", p: 2, mt: 4 }} textAlign="center">
+      <Typography variant="body2" color="white">
+        © 2025 - Sistema de Categorías - Taller Académico
+      </Typography>
     </Box>
   );
 }

@@ -1,14 +1,13 @@
-import { Card, CardContent, Typography } from "@mui/material";
-import { Grid } from "@mui/material";
-
-
-
+import { Card, CardContent, Grid, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 export default function CategoryCards() {
+  const navigate = useNavigate();
+
   return (
     <Grid container spacing={2} mt={2} justifyContent="center">
       <Grid item xs={12} md={4}>
-        <Card>
+        <Card onClick={() => navigate("/categorias")} sx={{ cursor: "pointer" }}>
           <CardContent>
             <Typography variant="h6">Listado de Categorías</Typography>
             <Typography variant="body2">
@@ -17,26 +16,7 @@ export default function CategoryCards() {
           </CardContent>
         </Card>
       </Grid>
-      <Grid item xs={12} md={4}>
-        <Card>
-          <CardContent>
-            <Typography variant="h6">Crear Categoría</Typography>
-            <Typography variant="body2">
-              Agrega nuevas categorías matemáticas o temáticas.
-            </Typography>
-          </CardContent>
-        </Card>
-      </Grid>
-      <Grid item xs={12} md={4}>
-        <Card>
-          <CardContent>
-            <Typography variant="h6">Cálculos Básicos</Typography>
-            <Typography variant="body2">
-              Realiza áreas y cálculo de IVA.
-            </Typography>
-          </CardContent>
-        </Card>
-      </Grid>
+      {/* los otros dos cards pueden estar igual o sin navegación */}
     </Grid>
   );
 }

@@ -1,4 +1,5 @@
-import { AppBar, Toolbar, Typography, Button } from "@mui/material";
+import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -7,11 +8,13 @@ export default function Navbar() {
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           Gestión de Categorías
         </Typography>
-        <Button color="inherit">Home</Button>
-        <Button color="inherit">Categorías</Button>
-        <Button color="inherit">Nueva Categoría</Button>
-        <Button color="inherit">Cálculos</Button>
-        <Button color="inherit">Información</Button>
+        <Box>
+          <Button color="inherit" component={Link} to="/">Home</Button>
+          <Button color="inherit" component={Link} to="/categorias">Categorías</Button>
+          <Button color="inherit" component={Link} to="/nueva-categoria">Nueva Categoría</Button>
+          <Button color="inherit">Cálculos</Button>
+          <Button color="inherit">Información</Button>
+        </Box>
       </Toolbar>
     </AppBar>
   );
